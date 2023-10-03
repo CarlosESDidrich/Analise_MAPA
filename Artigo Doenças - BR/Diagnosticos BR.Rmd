@@ -1,0 +1,37 @@
+---
+title: "Untitled"
+output: ioslides_presentation
+date: "2023-04-03"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+#Bibliotecas
+
+```{r}
+library(readr)
+library(tidyverse)
+library(stringdist)
+library(readxl)
+library(writexl)
+library(readr)
+
+```
+
+
+
+# Dados
+Disponibilizados pelo mapa no site <https://dados.agricultura.gov.br/dataset/servico-de-inspecao-federal-sif/resource/8c2cc427-bb38-4341-8b6f-a397a5f2da5c#>
+
+```{r}
+dados <- read_excel("BD/MAPA.xls")
+head(dados)
+```
+
+# Analisar dados e encontrar os problemas
+```{r}
+data.frame(table(dados$DIAGNOSTICO))
+```
+
